@@ -14,7 +14,7 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: false}));
-app.set('frontend', path.join(__dirname, 'frontend'));
+//app.set('frontend', path.join(__dirname, 'frontend'));
 
 app.use(cookieSession({
     name: 'session',
@@ -73,7 +73,7 @@ app.post('/member/login', async (req, res) => {
         req.session.user = rows[0]
         console.log("Member login")
         res.send('login successfully')
-    
+        
         }else{
             res.send("login fail")
         }
