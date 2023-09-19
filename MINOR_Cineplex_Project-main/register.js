@@ -1,7 +1,7 @@
-async function register(){
-    let firstname = document.getElementById("fname").value
-    let lastname = document.getElementById("lname").value
-    let pass = document.getElementById("pass").value;
+const register = async() => {
+    let First_Name = document.getElementById("fname").value
+    let Last_Name = document.getElementById("lname").value
+    let password = document.getElementById("pass").value;
     let cfpass = document.getElementById("cfpass").value;
     let username = document.getElementById("username").value;
     
@@ -10,11 +10,12 @@ async function register(){
         window.alert("Password doesn't match");
     }
     else{
+        
         let userdata = {
-            First_Name: firstname,
-            Last_Name: lastname,
+            firstname: First_Name,
+            lastname: Last_Name,
             Username : username,
-            Password : pass
+            Password : password
         }     
         const response = await axios.post('http://localhost:8000/member/register', userdata)
     }
