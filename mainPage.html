@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="mainPage_style.css">
 </head>
 <body>
+    <script src="login_mainPage.js"></script>
     <!-- แถบข้างบน -->
     <header>
         <nav>
             <ul>
                 <li><a href="mainPage.html">Main</a></li>
                 <li><a href="movies.html">Movies and Show</a></li>
-                <li><a href="login.html">login</a></li>
+                <li onclick="openForm()"><b>login</b></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
@@ -24,11 +25,30 @@
     <h3> Welcome to </h3>
     <h1> MINOR Cineplex </h1>
     <main>
-        <!-- ข้อมูลหน้าหลักของคุณ -->
+        <!-- ข้อมูลหน้าหลัก -->
     </main>
     <footer>
         Let the movie magic take to you on a wild ride!
         <!-- ข้อมูลที่อยู่ในส่วนล่างของเว็บไซต์ -->
     </footer>
+
+    <div class="blur-background" id="blurBackground"></div>
+    
+    <div class="form-popup" id="myForm">
+        <form class="form-container">
+            <h1 class="head1" style="font-family: 'PK'">Login</h1>
+            <span><img src="assets/interface/close.png" class="close" onclick="closeForm()"></span>
+
+            <label for="email" style="font-family: 'PK';">อีเมล</label>
+            <input type="text" style="font-family: 'PK';" placeholder="กรุณาใส่อีเมล" name="email">
+
+            <label for="pass" style="font-family: 'PK';">รหัสผ่าน</label>
+            <input type="password" style="font-family: 'PK';" placeholder="กรุณาใส่รหัสผ่าน" name="pass">
+            <input type="password" style="font-family: 'PK';" placeholder="ยืนยันรหัสผ่าน" name="pass_confirm">
+            <button type="button" class="btn login" onclick="Login()">เข้าสู่ระบบ</button>
+            <button type="button" class="btn register" onclick="Register()">สมัครสมาชิก</button>
+        </form>
+    </div>
+
 </body>
 </html>

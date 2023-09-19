@@ -53,3 +53,122 @@ footer {
     font-weight: bold;
     font-size: 15px;
 }
+
+.head1{
+    font-size: 30px;
+}
+
+
+@font-face {
+    font-family: 'PK';
+    src: url('./assets/font/PK.ttf');
+}
+
+.form-popup {
+    display: none;
+    border-radius: 10px;
+    position: fixed;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    border-radius: 10px;
+    font-family: 'PK';
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    border-radius: 10px;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    font-family: 'PK';
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  .form-container .register {
+    background-color: rgb(4, 163, 255);
+  }
+  
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+  
+  .blur-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background-color: #33333357;
+    display: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .form-popup {
+    animation: popup 0.3s ease-in-out;
+    transform-origin: center;
+  }
+
+  .form-container input[name=pass_confirm]{
+    display: none;
+  }
+  
+  .close {
+    width: 15px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+  
+  /* Animate Section */
+  @keyframes popup {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+  }
