@@ -54,9 +54,59 @@ footer {
     font-size: 15px;
 }
 
-.head1{
-    font-size: 30px;
+button {
+  display: inline-block;
+  border-radius: 4px;
+
+  border: none;
+  border-radius: 12px;
+  background-color: #86ed08;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  font-family : Arial;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  width: 30%;
 }
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 25px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+button:hover {
+  background-color: #35f605;
+  color: rgb(255, 255, 255);
+  font-size: 32px;
+  font-weight: bold;
+  font-style: italic;
+}
+
 
 
 @font-face {
