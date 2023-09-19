@@ -74,6 +74,7 @@ app.post('/member/login', async (req, res) => {
         console.log("Member login")
         res.send('login successfully')
         
+    
         }else{
             res.send("login fail")
         }
