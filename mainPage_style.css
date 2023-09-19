@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     text-align: center;
-    font-family : Arial ;
+    font-family : Arial;
 }
 
 /* สไตล์ของ Header */
@@ -37,9 +37,19 @@ main {
     padding: 20px;
 }
 
+h3{
+    font-size: 30px;
+}
+
+h1{
+    font-size: 60px;
+}
 footer {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    font-family : "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-size: 15px;
 }
