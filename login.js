@@ -1,4 +1,4 @@
-function Login(){
+async function Login() {
     let username = document.getElementById('username').value
     console.log("Username = "+username)
     let password = document.getElementById('pass').value
@@ -11,9 +11,14 @@ function Login(){
         Password : password
     }
 
-    console.log(userdata)
+    console.log('submit data', userdata)
+    const response = await axios.post('http://localhost:8000/member/login', userdata)
+    console.log('response', response.data)
+    window.alert(response.data)
+
+    if(response.data == "login successfully"){
+        window.location.href = "movies.html";
+    }
+
 
 }
-
-
-
