@@ -71,16 +71,16 @@ app.post('/member/login', async (req, res) => {
     [Username, Password])
     if(rows.length === 1){
         req.session.user = rows[0]
-        console.log("Member เข้าสู่ระบบ")
-        res.send('เข้าสู่ระบบสำเร็จ')
+        console.log("Member login")
+        res.send('login successfully')
     
         }else{
-            res.send("เข้าสู่ระบบสไม่สำเร็จ")
+            res.send("login fail")
         }
     }
     catch(error){
-        console.error('เกิดข้อผิดพลาดในการเข้าสู่ระบบ:', error.message)
-        return res.status(500).send('เกิดข้อผิดพลาดในการเข้าสู่ระบบ')
+        console.error('Something wrong:', error.message)
+        return res.status(500).send('Something wrong')
     }
 
     
