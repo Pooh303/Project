@@ -35,7 +35,7 @@ function closeForm() {
 }
 
 
-function Register() {
+async function Register() {
   let registrationForm = document.querySelector(".form-popup");
   let button = document.querySelector(".btn");
   let input = document.querySelector("input[name=pass_confirm]");
@@ -44,19 +44,33 @@ function Register() {
   formTitle.textContent = "Register";
   input.style.display = "block";
 
-  let email = document.getElementsByName("email")[0].value;
+
+  let firstname = document.getElementsByName("fname")[0].value;
+  let lastname = document.getElementsByName("lname")[0].value;
+  let username = document.getElementsByName("username")[0].value;
   let password = document.getElementsByName("pass")[0].value;
   let confirm_password = document.getElementsByName("pass_confirm")[0].value;
+
+  let userdata = {
+    First_Name: firstname,
+    Last_Name: lastname,
+    Username: username,
+    Password: password
+  }
+
+  console.log(username+" "+password)
+  
+
+
   
   if (button.style.display == "none") {
-    if (email == "" && password == "" && confirm_password == ""|| password == "" 
-    || confirm_password == "" || confirm_password == "" && confirm_password == "" || email == ""){
+    if (username == "" && password == "" && confirm_password == ""|| password == "" 
+    || confirm_password == "" || confirm_password == "" && confirm_password == ""){
       alert("กรุณากรอกข้อมูลให้ครบถ้วน");
-    }else if (confirm_password != password) {
+    }else if (confirm_password !== password) {
       alert("รหัสผ่านไม่ตรงกัน");
     }else {
-      let password = document.getElementsByName("pass_confirm")[0].value;
-      console.log(email, password);
+      const response = await axios.post('http://localhost:8000/member/register', userdata)
       alert("ลงทะเบียนสำเร็จ");
       closeForm();
     }
@@ -66,15 +80,15 @@ function Register() {
 
 
 async function Login() {
-  let email = document.getElementsByName("email")[0].value;
+  let username = document.getElementsByName("username")[0].value;
   let password = document.getElementsByName("pass")[0].value;
   
-  if(email == "" || password == "") {
+  if(username == "" || password == "") {
     alert("กรุณากรอกข้อมูลให้ครบถ้วน");
   }else{
     // backend
     let userdata = {
-      Username: email,
+      Username: username,
       Password: password
     }
     console.log("Username = "+username)
