@@ -57,20 +57,18 @@ footer {
 button {
   display: inline-block;
   border-radius: 4px;
-
   border: none;
   border-radius: 12px;
   background-color: #86ed08;
   color: #FFFFFF;
   text-align: center;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
   font-family : Arial;
   padding: 20px;
   width: 200px;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
   width: 30%;
 }
 
@@ -102,9 +100,8 @@ button:hover span:after {
 button:hover {
   background-color: #35f605;
   color: rgb(255, 255, 255);
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
-  font-style: italic;
 }
 
 
@@ -163,7 +160,7 @@ button:hover {
     font-family: 'PK';
     background-color: #04AA6D;
     color: white;
-    padding: 16px 20px;
+    padding: 15px 20px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -209,6 +206,14 @@ button:hover {
     top: 20px;
     right: 20px;
     cursor: pointer;
+  }
+
+  .Firstname{
+    display: none;
+  }
+
+  .Lastname{
+    display: none;
   }
   
   /* Animate Section */

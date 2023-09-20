@@ -13,6 +13,8 @@ function openForm() {
   }, 10);
 }
 
+let First_Name = document.querySelector("div[class=Firstname]");
+let Last_Name = document.querySelector("div[class=Lastname]");
 
 function closeForm() {
   let form = document.getElementById("myForm");
@@ -28,6 +30,10 @@ function closeForm() {
   let button = document.querySelector(".btn");
   let input = document.querySelector("input[name=pass_confirm]");
   let formTitle =  document.getElementsByClassName("head1")[0];
+  let First_Name = document.querySelector("div[class=Firstname]");
+  let Last_Name = document.querySelector("div[class=Lastname]");
+  First_Name.style.display = "none";
+  Last_Name.style.display = "none";
   registrationForm.style.display = "none";
   input.style.display = "none";
   button.style.display = "block";
@@ -39,10 +45,14 @@ async function Register() {
   let registrationForm = document.querySelector(".form-popup");
   let button = document.querySelector(".btn");
   let input = document.querySelector("input[name=pass_confirm]");
+  let First_Name = document.querySelector("div[class=Firstname]");
+  let Last_Name = document.querySelector("div[class=Lastname]");
   let formTitle =  document.getElementsByClassName("head1")[0];
   registrationForm.style.display = "block";
   formTitle.textContent = "Register";
   input.style.display = "block";
+  First_Name.style.display = "block";
+  Last_Name.style.display = "block";
 
 
   let firstname = document.getElementsByName("fname")[0].value;
@@ -51,25 +61,27 @@ async function Register() {
   let password = document.getElementsByName("pass")[0].value;
   let confirm_password = document.getElementsByName("pass_confirm")[0].value;
 
-  let userdata = {
-    First_Name: firstname,
-    Last_Name: lastname,
-    Username: username,
-    Password: password
-  }
 
-  console.log(username+" "+password)
-  
-
-
-  
   if (button.style.display == "none") {
-    if (username == "" && password == "" && confirm_password == ""|| password == "" 
-    || confirm_password == "" || confirm_password == "" && confirm_password == ""){
+    if (firstname == "" || lastname == "" || username == "" || password == "" || confirm_password == ""){
       alert("กรุณากรอกข้อมูลให้ครบถ้วน");
     }else if (confirm_password !== password) {
       alert("รหัสผ่านไม่ตรงกัน");
     }else {
+      let userdata = {
+        First_Name: firstname,
+        Last_Name: lastname,
+        Username: username,
+        Password: password
+      }
+
+      console.log(
+        "Username:", username, 
+        "Password:", password,
+        "First_Name:", firstname,
+        "Last_Name:", lastname
+      )
+
       const response = await axios.post('http://localhost:8000/member/register', userdata)
       alert("ลงทะเบียนสำเร็จ");
       closeForm();
